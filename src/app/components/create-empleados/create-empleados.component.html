@@ -1,0 +1,43 @@
+<div class="container pt-4">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h3>Agregar Empleado <div *ngIf="loading" class="spinner-border float-end" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                      </div></h3>
+                    
+                    <span *ngIf="submitted && createEmpleado.invalid" class="badge bg-danger">TODOS LOS CAMPOS SON
+                        OBLIGATORIOS</span>
+
+                    <form class="mt-4" [formGroup]="createEmpleado" (ngSubmit)="agregarEmpleado()">
+                        <div class="row">
+                            <div class="col">
+                                <input type="text" placeholder="Nombre" class="form-control form-control-lg"
+                                    formControlName="nombre">
+
+                            </div>
+                            <div class="col">
+                                <input type="text" placeholder="Apellido" class="form-control form-control-lg"
+                                    formControlName="apellido">
+
+                            </div>
+
+                        </div>
+                        <input type="text" placeholder="Documento" class="form-control form-control-lg mt-4"
+                            formControlName="documento">
+                        <input type="text" placeholder="Salario" class="form-control form-control-lg mt-4 mb-4"
+                            formControlName="salario">
+                        <button class="btn btn-secondary btn-lg me-2" type="text"
+                            routerLink="list-empleados">Cancelar</button>
+                        <button class="btn btn-dark btn-lg" type="submit">Crear</button>
+
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
